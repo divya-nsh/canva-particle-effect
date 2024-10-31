@@ -9,7 +9,7 @@ const cursor = {
   y: 0,
 };
 let hue = 0;
-let connectingEffect = true;
+let connectingEffect = false;
 let maxParticleSize = 10;
 
 //-------------------------------//
@@ -120,12 +120,19 @@ addEventListener("click", (e) => {
 
 addEventListener("resize", setCanvaSize);
 
+const storedValue = localStorage.getItem("connecting-effect");
+if (storedValue && storedValue === "1") {
+  connectingEffect = true;
+}
+
 input.checked = connectingEffect;
 input.addEventListener("click", (e) => {
   particles.clear();
   connectingEffect = !connectingEffect;
+  localStorage.setItem("connecting-effect", connectingEffect ? "1" : "0");
   input.checked = connectingEffect;
 });
+
 document.querySelector(".option")?.addEventListener("click", (e) => {
   e.stopPropagation();
 });
