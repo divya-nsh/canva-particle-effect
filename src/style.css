@@ -11,12 +11,18 @@ canvas {
   display: block;
 }
 
-.option {
-  position: absolute;
+.head {
+  width: 100%;
   top: 0;
   left: 0;
-  padding: 4px;
-  color: rgb(144, 140, 140);
+  position: absolute;
+  display: flex;
+  justify-content: space-between;
+  color: rgb(173, 163, 163);
+  padding: 3px 10px;
+}
+
+.option {
   font-size: 1rem;
   display: flex;
   align-items: center;
@@ -25,4 +31,36 @@ canvas {
 input {
   width: 10px;
   height: 10px;
+}
+
+.head a {
+  color: rgb(189, 181, 181);
+  background-color: transparent;
+  padding: 0px 5px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  border: 1px solid rgb(81, 80, 80);
+  border-radius: 5px;
+  text-decoration: none;
+}
+
+.head a:hover {
+  text-decoration: underline;
+  border-color: rgb(0, 81, 255);
+  color: white;
+}
+
+footer {
+  position: absolute;
+  font-size: 0.9rem;
+  bottom: 5px;
+  color: gray;
+  text-align: center;
+  width: 100%;
+  font-family: cursive;
+}
+
+footer a {
+  color: rgb(80, 80, 80);
 }

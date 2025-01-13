@@ -2,22 +2,39 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>JS Particle Effect</title>
+    <meta
+      name="description"
+      content="JS canva Animation creating multi-colored disappearing stream of light that follow
+    the cursor as it moves over the image"
+    />
   </head>
 
   <body>
+    <div class="head">
+      <div class="option">
+        <div class="checkbox">
+          <input id="connecting-effect" type="checkbox" />
+          <label for="connecting-effect"> Connecting Effect </label>
+        </div>
+      </div>
+      <a
+        title="Github source code"
+        href="https://github.com/divya-nsh/canva-particle-effect"
+        >Github
+        <img aria-hidden="true" width="30" height="30" src="/github-icon.svg" />
+      </a>
+    </div>
     <canvas id="cw"
       >Animation creating multi-colored disappearing stream of light that follow
       the cursor as it moves over the image
     </canvas>
-    <div class="option">
-      <div class="checkbox">
-        <input id="connecting-effect" type="checkbox" />
-        <label for="connecting-effect"> Connecting Effect </label>
-      </div>
-    </div>
+
+    <footer>
+      Created by <a href="https://x.com/divyansh_soni_0">Divyansh</a>
+    </footer>
 
     <script type="module" src="/src/main.ts"></script>
   </body>
