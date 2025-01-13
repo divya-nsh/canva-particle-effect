@@ -1,4 +1,3 @@
-import "./style.css";
 const canvas = document.getElementById("cw") as HTMLCanvasElement;
 const ctx = canvas?.getContext("2d") as CanvasRenderingContext2D;
 const input = document.querySelector("#connecting-effect") as HTMLInputElement;
@@ -100,12 +99,20 @@ addEventListener("mousemove", (e) => {
   drawParticles(connectingEffect ? 2 : 20);
 });
 
-addEventListener("touchmove", (e) => {
-  e.preventDefault();
-  cursor.x = Math.floor(e.touches[0].clientX);
-  cursor.y = Math.floor(e.touches[0].clientY);
-  drawParticles(connectingEffect ? 1 : 30);
-});
+//preventDefault() & passive:false to disable browser pull-to-refresh in touch or mobile devices
+addEventListener(
+  "touchmove",
+  (e) => {
+    if (window.scrollY === 0 && e.touches[0].clientY > 0) {
+      e.preventDefault();
+    }
+
+    cursor.x = Math.floor(e.touches[0].clientX);
+    cursor.y = Math.floor(e.touches[0].clientY);
+    drawParticles(connectingEffect ? 1 : 30);
+  },
+  { passive: false }
+);
 
 addEventListener("click", (e) => {
   // Speed boast particles
